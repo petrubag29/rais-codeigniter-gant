@@ -58,7 +58,7 @@ class CI_Router {
 	public $config;
 
 	/**
-	 * List of routes
+	 * List of routesm
 	 *
 	 * @var	array
 	 */

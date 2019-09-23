@@ -15,7 +15,6 @@ class Dashboard extends MY_Controller {
 
         $view_data["dashboards"] = $this->Dashboards_model->get_details(array("user_id" => $this->login_user->id))->result();
         $view_data["dashboard_type"] = "default";
-
         if ($this->login_user->user_type === "staff") {
             $view_data["show_timeline"] = get_array_value($widgets, "new_posts");
             $view_data["show_attendance"] = get_array_value($widgets, "clock_in_out");
@@ -25,6 +24,7 @@ class Dashboard extends MY_Controller {
             $view_data["show_invoice_statistics"] = get_array_value($widgets, "invoice_statistics");
             $view_data["show_ticket_status"] = get_array_value($widgets, "ticket_status");
             $view_data["show_clock_status"] = get_array_value($widgets, "clock_status");
+
 
             $this->template->rander("dashboards/index", $view_data);
         } else {
@@ -292,7 +292,7 @@ class Dashboard extends MY_Controller {
 
             $this->template->rander("dashboards/custom_dashboards/view", $view_data);
         } else {
-            redirect("dashboard"); //no dashbord selected. go to default dashboard  
+            redirect("dashboard"); //no dashbord selected. go to default dashboard
         }
     }
 
@@ -412,7 +412,7 @@ class Dashboard extends MY_Controller {
 
         return $widgets;
     }
-    
+
     private function _get_default_widgets(){
         //app widgets
         if ($this->login_user->user_type == "staff") {
@@ -468,12 +468,12 @@ class Dashboard extends MY_Controller {
                 "todo_list",
             );
         }
-        
+
         return $default_widgets_array;
     }
 
     private function _make_widgets($dashboard_id = 0) {
-        
+
         $default_widgets_array = $this->_get_default_widgets();
         $checked_widgets_array = $this->_remove_widgets($default_widgets_array);
 

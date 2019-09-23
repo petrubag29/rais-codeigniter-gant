@@ -1,6 +1,6 @@
 <div id="page-content" class="p20 clearfix">
-
     <?php
+//    echo $dashboards; exit();
     if (count($dashboards)) {
 
         $this->load->view("dashboards/dashboard_header");

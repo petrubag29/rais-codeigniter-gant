@@ -20,7 +20,7 @@ if ($dashboard_type == "custom") {
             <span style="background-color: <?php echo $color; ?>" class="color-tag border-circle"></span>
         </span>
         <h4 class="pull-left"><?php echo $title; ?></h4>
-    </div>        
+    </div>
 
     <div class="pull-right clearfix">
         <span class="pull-right dropdown dashboard-dropdown ml10">

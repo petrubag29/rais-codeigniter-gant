@@ -10,18 +10,18 @@
         </div>
     </div>
     <div class="table-responsive">
-        <table id="task-table" class="display" width="100%">            
+        <table id="task-table" class="display" width="100%">
         </table>
-    </div>    
+    </div>
 </div>
 
-<?php 
+<?php
 
     //prepare status dropdown list
     //select the non completed tasks for team members by default
     //show all tasks for client by default.
 
-    $statuses = array(); 
+    $statuses = array();
     foreach($task_statuses as $status){
         $is_selected = false;
         if($this->login_user->user_type=="staff"){
@@ -29,10 +29,10 @@
                 $is_selected = true;
             }
         }
-        
+
         $statuses[] = array("text"=> ($status->key_name? lang($status->key_name): $status->title), "value"=>$status->id, "isChecked"=>$is_selected);
     }
-   
+
 ?>
 
 <script type="text/javascript">
@@ -54,7 +54,7 @@
                 multiSelect: [
                     {
                         name: "status_id",
-                        text: "<?php echo lang('status');?>", 
+                        text: "<?php echo lang('status');?>",
                         options: <?php echo json_encode($statuses); ?>
                     }
                 ],
@@ -97,7 +97,7 @@
                 multiSelect: [
                     {
                         name: "status_id",
-                        text: "<?php echo lang('status');?>", 
+                        text: "<?php echo lang('status');?>",
                         options: <?php echo json_encode($statuses); ?>
                     }
                 ],

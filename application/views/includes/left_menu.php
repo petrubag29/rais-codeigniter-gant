@@ -2,15 +2,14 @@
     <div id="sidebar-scroll">
         <ul class="" id="sidebar-menu">
             <?php
-            
+
             $dashboard_menu = array("name" => "dashboard", "url" => "dashboard", "class" => "fa-desktop dashboard-menu");
-            
             $selected_dashboard_id = get_setting("user_" . $this->login_user->id . "_dashboard");
             if ($selected_dashboard_id) {
                 $dashboard_menu = array("name" => "dashboard", "url" => "dashboard/view/" . $selected_dashboard_id, "class" => "fa-desktop dashboard-menu");
             }
-            
-            
+
+
             if ($this->login_user->user_type == "staff") {
 
                 $sidebar_menu = array();
@@ -124,7 +123,7 @@
                         $ticket_badge = count_new_tickets($specific_ticket_permission);
                     }
 
-                    // 
+                    //
 
                     $sidebar_menu[] = array("name" => "tickets", "url" => "tickets", "class" => "fa-life-ring", "devider" => true, "badge" => $ticket_badge, "badge_class" => "badge-secondary");
                 }
@@ -196,7 +195,8 @@
                 if ($this->login_user->is_admin) {
                     $sidebar_menu[] = array("name" => "settings", "url" => "settings/general", "class" => "fa-wrench");
                 }
-            } else {
+            }
+            else {
                 //client menu
                 //get the array of hidden menu
                 $hidden_menu = explode(",", get_setting("hidden_client_menus"));

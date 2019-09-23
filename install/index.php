@@ -1,4 +1,4 @@
-<?php
+h<?php
 
 $php_version_success = false;
 $mysql_success = false;

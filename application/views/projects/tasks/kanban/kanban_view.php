@@ -92,7 +92,7 @@
         }
 
 
-        //set column scroll 
+        //set column scroll
         $(".kanban-item-list").height($(window).height() - $(".kanban-item-list").offset().top - 30);
 
         $(".kanban-item-list").each(function (index) {
